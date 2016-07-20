@@ -1,1 +1,20 @@
-{{outlet}}
+<h1>What did you see? {{randomString}}</h1>
+
+<form {{action "newSiting" on="submit"}}>
+  <p>
+    <label>City</label>
+    {{input type="text" value=city}}
+  </p>
+
+  <p>
+    <label>State</label>
+    {{input type="text" value=state}}
+  </p>
+
+  <p>
+    <label>AN Rating</label>
+    {{input type="text" value=rating}}
+  </p>
+
+  <button>Submit</button>
+</form>
