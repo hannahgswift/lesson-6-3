@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('aliens-list', { path: 'aliens' });
   this.route('aliens-new', { path: 'aliens/new' });
   this.route('aliens-edit', { path: 'aliens/:id' });
+  this.route('cats');
 });
 
 export default Router;

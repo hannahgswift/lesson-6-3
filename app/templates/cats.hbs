@@ -1,0 +1,25 @@
+<form {{action "addCat" on="submit"}}>
+
+  <p>
+    Name: {{input type="text" value=name}}
+  </p>
+  <p>
+    Claws: {{input type="checkbox" checked=claws}}
+  </p>
+  <p>
+    Color: {{input type="text" value=color}}
+  </p>
+  <p>
+    Likes people: {{input type="checkbox" checked=likesPeople}}
+  </p>
+
+  <button>SUBMIT</button>
+</form>
+
+<ul>
+  {{#each model as |cat|}}
+    <li class="cat-list__item {{if cat.likesPeople "cat-list__item--nice" "cat-list__item--evil"}}">
+      {{ cat.name }} - {{ cat.color }}
+    </li>
+  {{/each}}
+</ul>

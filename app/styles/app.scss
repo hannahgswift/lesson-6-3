@@ -5,3 +5,23 @@
 body {
   margin: 0;
 }
+
+ul {
+  list-style: none;
+}
+
+
+.cat-list__item {
+  margin: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(0,0,0,0.2);
+
+  &--nice {
+    background: #e0f7fa;
+  }
+
+  &--evil {
+    background: #dd2c00;
+    color: #fafafa;
+  }
+}
