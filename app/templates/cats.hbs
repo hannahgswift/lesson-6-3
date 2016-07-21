@@ -19,7 +19,9 @@
 <ul>
   {{#each model as |cat|}}
     <li class="cat-list__item {{if cat.likesPeople "cat-list__item--nice" "cat-list__item--evil"}}">
-      {{ cat.name }} - {{ cat.color }}
+      <span>{{ cat.name }} - {{ cat.color }}</span>
+
+      <button {{action "deleteCat" cat}}>Adopt!</button>
     </li>
   {{/each}}
 </ul>

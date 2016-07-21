@@ -2,7 +2,20 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    addCat(ar) {
+    deleteCat(kitty) {
+      if (confirm('Are you sure you want a cat right meow?')) {
+        fetch('https://tiny-tn.herokuapp.com/collections/cats/' + kitty._id, {
+          method: 'Delete',
+        }).then(() => {
+          this.set('model', this.model.filter((item) => {
+            // How do we know which items to let through
+            // Only let cats through that aren't the one we're deleting
+            return item._id !== kitty._id;
+          }));
+        })
+      }
+    },
+    addCat() {
       const newObj = {
         name: this.name || '',
         claws: this.claws || false,
