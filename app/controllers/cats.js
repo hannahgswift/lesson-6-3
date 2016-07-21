@@ -7,11 +7,13 @@ export default Ember.Controller.extend({
         fetch('https://tiny-tn.herokuapp.com/collections/cats/' + kitty._id, {
           method: 'Delete',
         }).then(() => {
-          this.set('model', this.model.filter((item) => {
+          const updatedList = this.model.filter((item) => {
             // How do we know which items to let through
             // Only let cats through that aren't the one we're deleting
             return item._id !== kitty._id;
-          }));
+          });
+
+          this.set('model', updatedList);
         })
       }
     },
