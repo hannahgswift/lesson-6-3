@@ -23,7 +23,10 @@ export default Ember.Controller.extend({
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-      });
+      }).then((res) => res.json())
+        .then((cat) => {
+          this.set('model', [...this.model, cat]);
+        });
     }
   }
 });
